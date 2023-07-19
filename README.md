@@ -58,7 +58,7 @@ The datasheet says
 
 So we'll connect the capacitor between `VOUT` and GND (the `VSS` pin).
 
-![](/videos/wire-tool.mov)
+https://github.com/maggie-j-liu/hacker-card-jam/assets/63619830/d65ff889-cf6c-44e8-90d4-0d61e032274d
 
 - The pins `LA` and `LB` are for the antenna, so we'll wire up the antenna between those two pins.
 - > If NTAG I2C also powers the I2C bus, then VCC must be connected to VOUT
