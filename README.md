@@ -41,17 +41,17 @@ This will open up the schematic editor. Some important parts:
 - `Library` on the left toolbar: This is where we will search for components and import them.
 - `Wiring Tools` panel: We'll be using the wire tool to connect the components together.
 
-![](/photos/schematic-unannotated.png)
+![](/photos/schematic.png)
 
 ## Adding components to the schematic
 
 Click the `Library` button to open the parts picker. Search for a part (the part number works best), and make sure `JLCPCB Assembled` is selected. This will make sure we're choosing parts from JLCPCB's parts library, so that JLCPCB can assemble the boards when we order them.
 
-![](/photos/searching-for-parts-unannotated.png)
+![](/photos/searching-for-parts.png)
 
 Select the part, then hit the `Place` button to add it to your schematic. Repeat for all 4 of the parts listed above.
 
-![](/photos/parts-on-schematic-unannotated.png)
+![](/photos/parts-on-schematic.png)
 
 ### Adding the antenna
 
@@ -61,7 +61,7 @@ Note: this is not an actual part, so it doesn't need to be assembled onto the bo
 
 To add the antenna, search for `25X48MM_NFC_ANTENNA` in the Library, and instead of `JLCPCB Assembled`, select `User Contributed`. Select one of the options (check the preview to make sure it looks similar to the one I used here, but most of them should work), and place it on your schematic.
 
-![](/photos/selecting-antenna-unannotated.png)
+![](/photos/selecting-antenna.png)
 
 ## Wiring up the components
 
@@ -114,7 +114,7 @@ Here are the dimensions I'll be using, but feel free to make your business card 
 
 Once you set the board outline, you should see something like the image below. There's the outline of the board in pink, a bunch of components in red, and some thin blue lines connecting the components. Let's talk about what these are, and what the colors mean!
 
-![](/photos/pcb-editor-unannotated.png)
+![](/photos/pcb-editor.png)
 
 ### Layers
 
@@ -125,7 +125,7 @@ A PCB like a sandwich -- it's made up of many different layers. We're designing 
 - On top of the copper layers are **soldermask** layers. This is what gives PCBs their color -- common soldermask colors are green or black, but white, purple, blue, red, yellow, and more are also possible. Soldermask is added to the entire surface of the board (both the top and the bottom) by default. If you want to **remove** the soldermask (which will reveal the copper underneath), use the `TopSolderMaskLayer` or `BottomSolderMaskLayer` (for the top and bottom of the board, respectively).
 - On top of the soldermask layers are **silkscreen** layers. Silkscreen is usually white, and is generally used to label and identify components, but we'll be using it for ✨ PCB art ✨. We can use this to add contact info, a QR code, or even some illustrations to our business card. In EasyEDA, silkscreen is added on the `TopSilkLayer` and `BottomSilkLayer`.
 
-[TODO: insert illustration of PCB layers]
+![](/photos/pcb-layers.png)
 
 ### Components
 
@@ -147,7 +147,7 @@ Now, we have a bunch of components on the card. If we were to have the card manu
 
 It's best practice to manually route your traces, using the first button in the PCB tools panel: the `Track` tool.
 
-[TODO: insert image of PCB tools menu]
+![](/photos/pcb-tools.png)
 
 However, to speed up the jam a bit, we'll be using EasyEDA's auto-router. Select `Route` > `Auto Route...` and click `Run` to watch the magic happen...
 
@@ -207,5 +207,7 @@ Here are some examples -- try incorporating these techniques into your board.
 - **Shiny silver or gold** (depends on the finish selected when ordering): add your object to both the `TopLayer` and `TopSolderMaskLayer` (for the top of the board), or to both `BottomLayer` and `BottomSolderMaskLayer` (for the bottom of the board), and superimpose these layers on top of each other. The `TopLayer` or `BottomLayer` will put the shiny copper on your object, while the `TopSolderMaskLayer` or `BottomSolderMaskLayer` will **remove** the soldermask on the object, revealing the shiny copper underneath.
 - **Textured, or with slight color variation**: add your object to only the `TopLayer` or `BottomLayer`. Without removing the soldermask, the copper will still be covered by the soldermask, but it may slightly lighten the soldermask color and will create a textured feel.
 - **Translucent yellow** (color of the FR-4 material): add our object to only the `TopSolderMaskLayer` or `BottomSolderMaskLayer`. This will remove the soldermask on the object, revealing the yellow FR-4 material underneath. This technique is useful for allowing LEDs to shine from one side of the board to the other, or just for adding another color to your design.
+
+![](/photos/layer-effects.png)
 
 [TODO: conclusion / onboard / links to other projects to try out]
